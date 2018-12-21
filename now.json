@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "alias": ["https://hackathon2018-team1.now.sh"],
+  "alias": ["https://hackathon2018-team2.now.sh"],
   "builds": [
     { "src": "package.json", "use": "@now/static-build", "config": { "distDir": "build" }  }
   ]
