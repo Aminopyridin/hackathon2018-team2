@@ -1,1 +1,0 @@
-export const ON_LIGHTER = 'ON_LIGHTER'
