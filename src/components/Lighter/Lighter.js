@@ -1,14 +1,14 @@
 import React from 'react';
 import styles from './style.css';
-/*
-class Fire extends React.Component {
+
+export default class Fire extends React.Component {
     render () {
         return (
-
-        )
+            <
+        );
     }
 }
-*/
+
 export default class ChristmasTree extends React.Component {
     render () {
         return (
