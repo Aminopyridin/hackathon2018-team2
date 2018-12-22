@@ -3,8 +3,7 @@ import ReactDom from 'react-dom';
 import App from './components/App/App';
 import './style.css';
 import '../favicon.ico'
-
 ReactDom.render(
-    <App />,
+    <App/>,
     document.getElementById('app')
 );

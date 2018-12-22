@@ -1,0 +1,10 @@
+.lighter {
+    position: relative;
+    margin: 15px auto;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+.lighter:nth-child(2n + 1){
+    left : 15px;
+}
