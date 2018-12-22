@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './style.css';
 import Lighter from "../Lighter/Lighter";
-
+/* eslint react/prop-types: 0 */
 export default class ChristmasTree extends React.Component {
     constructor(props) {
         super(props);
@@ -15,6 +15,7 @@ export default class ChristmasTree extends React.Component {
             this.state.colors[i] = "grey";
         }
         this.rightLighters = this.shuffleIds(this.ids);
+        console.log(this.rightLighters)
     }
 
     shuffleIds(ids) {
@@ -30,7 +31,6 @@ export default class ChristmasTree extends React.Component {
 
     handleLighter (id) {
         if (!id) return;
-        console.log(this.rightLighters)
         return () => {
             if (this.rightLighters[this.pointer] === id) {
                 const newState = {...this.state};
@@ -55,7 +55,6 @@ export default class ChristmasTree extends React.Component {
         }
     }
 
-
     render() {
         return (
             <div className={styles.tree}>
@@ -68,8 +67,9 @@ export default class ChristmasTree extends React.Component {
 
                 </div>
                 <div className={`${styles.layer} ${styles.four}`}>
-                    {this.ids.map(ide => (<Lighter color={this.state.colors[ide]} id={ide} key={ide} onClick = {this.handleLighter( ide)}/>))}
+
                 </div>
+                {this.ids.map(ide => (<Lighter color={this.state.colors[ide]} id={ide} key={ide}   onClick = {this.handleLighter( ide)}/>))}
             </div>
         );
     }
