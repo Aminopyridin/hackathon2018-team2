@@ -8,8 +8,9 @@ export default class Lighter extends PureComponent {
     }
 
     render() {
+        debugger;
         return (
-        <div className={styles.lighter} style={{backgroundColor : this.props.color}} onClick={this.props.onClick}>
+        <div className={styles.lighter} style={{backgroundColor : this.props.color}} onClick={() => this.props.onClick(this.props.id)}>
         </div>)
     }
 }

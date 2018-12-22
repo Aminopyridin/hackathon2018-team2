@@ -7,7 +7,7 @@ export default class App extends React.Component {
         return (
             <div className={styles.app}>
                 <div className={styles.treeWrapper}>
-                    <ChristmasTree />
+                    <ChristmasTree number={10}/>
                 </div>
             </div>
         );
