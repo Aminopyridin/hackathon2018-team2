@@ -5,11 +5,12 @@ import Lighter from "../Lighter/Lighter";
 export default class ChristmasTree extends React.Component {
     constructor(props) {
         super(props);
-        this.state = {ids : [], pointer : 0, rightLighters : []};
+        this.state = {ids : [], pointer : 0, rightLighters : [], colors : {}};
 
         this.lighterCount = props.number;
         for (let i = 1; i <= this.lighterCount; i++) {
             this.state.ids.push(i);
+            this.state.colors[i] = "grey";
         }
         this.state.rightLighters = this.shuffleIds(this.state.ids);
     }
@@ -29,11 +30,20 @@ export default class ChristmasTree extends React.Component {
         const self = this;
         return function () {
             alert(self.state.rightLighters);
-            if (self.state.rightLighters[self.state.pointer]) {
+            alert(id);
+            if (self.state.rightLighters[self.state.pointer] === id) {
+                self.state.colors[id] = "yellow";
                 self.state.pointer++;
             } else {
+                
+                for (let i = 1; i <= self.state.rightLighters.length; i++) {
+                    self.state.colors[i] = "grey";
+                }
+
                 self.state.pointer = 0;
             }
+
+            self.setState(self.state);
         }
     }
 
@@ -50,7 +60,7 @@ export default class ChristmasTree extends React.Component {
 
                 </div>
                 <div className={`${styles.layer} ${styles.four}`}>
-                    {this.state.ids.map(ide => (<Lighter color="grey" id={ide} key={ide} onClick = {this.handleLighter( ide)}/>))}
+                    {this.state.ids.map(ide => (<Lighter color={this.state.colors[ide]} id={ide} key={ide} onClick = {this.handleLighter( ide)}/>))}
                 </div>
             </div>
         );
